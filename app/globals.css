@@ -400,6 +400,7 @@ button:focus-visible {
 .ring-two {
   top: 31%;
   right: 1%;
+  box-shadow: 0 0 0 3px #4caf50;
 }
 
 .category-list {

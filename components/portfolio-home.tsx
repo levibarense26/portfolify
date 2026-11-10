@@ -149,7 +149,6 @@ export function PortfolioHome() {
                   type="button"
                   onClick={() => openCategory(category)}
                 >
-                  <span className="category-index">0{index + 1}</span>
                   <span className="teaser-copy">
                     <span className="teaser-title">{category.title}</span>
                     <span className="teaser-description">{category.description}</span>
