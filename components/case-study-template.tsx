@@ -34,7 +34,6 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
 
           <section className="case-study-about" aria-labelledby="case-study-about-title">
             <div className="case-study-section-heading">
-              <p className="case-study-section-label">01 / Context</p>
               <h2 id="case-study-about-title">About this project</h2>
             </div>
 
@@ -60,7 +59,6 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
           <section className="case-study-gallery" aria-labelledby="case-study-gallery-title">
             <div className="case-study-gallery-heading">
               <div className="case-study-section-heading">
-                <p className="case-study-section-label">02 / Visual notes</p>
                 <h2 id="case-study-gallery-title">Selected frames</h2>
               </div>
               <p className="case-study-gallery-note">
@@ -91,7 +89,6 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
                     )}
                   </div>
                   <figcaption>
-                    <span className="case-study-caption-number">{figure.number}</span>
                     <span>{figure.caption}</span>
                   </figcaption>
                 </figure>
