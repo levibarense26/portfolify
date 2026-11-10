@@ -3,11 +3,30 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
+type ProjectPlaceholder = {
+  title: string
+  status: string
+  href?: string
+}
+
 type Category = {
   id: string
   title: string
   description: string
+  projects: ProjectPlaceholder[]
 }
+
+const placeholderProjects: ProjectPlaceholder[] = [
+  {
+    title: 'Project title coming soon',
+    status: 'Case study in progress',
+    href: '/case-studies/project-title-coming-soon',
+  },
+  {
+    title: 'Second project coming soon',
+    status: 'Project placeholder',
+  },
+]
 
 const categories: Category[] = [
   {
@@ -15,23 +34,27 @@ const categories: Category[] = [
     title: 'Organizing',
     description:
       'Working with others to build community and collectively deciding actions to take together.',
+    projects: placeholderProjects,
   },
   {
     id: 'systems-analysis',
     title: 'Systems Analysis',
     description:
       'Systems are what run our world. Understanding them and what makes them inefficient is key to changing them.',
+    projects: placeholderProjects,
   },
   {
     id: 'design-research',
     title: 'Design Research',
     description:
       'I enjoy using creative methods to find problems by talking to key stakeholders with diverse experiences.',
+    projects: placeholderProjects,
   },
   {
     id: 'writing',
     title: 'Writing',
     description: 'Writing is how my best thoughts get fleshed out. Read a few of my pieces.',
+    projects: placeholderProjects,
   },
 ]
 
@@ -114,7 +137,12 @@ export function PortfolioHome() {
       </header>
 
       <div className="portfolio-stage">
-        <section className="home-surface" aria-label="Portfolio home">
+        <section
+          className="home-surface"
+          aria-label="Portfolio home"
+          aria-hidden={Boolean(activeCategory)}
+          inert={Boolean(activeCategory)}
+        >
           <div className="home-content">
             <section className="intro-section" aria-labelledby="home-heading">
               <div className="overlap-rings" aria-hidden="true">
@@ -148,6 +176,8 @@ export function PortfolioHome() {
                   className="category-teaser"
                   key={category.id}
                   type="button"
+                  aria-controls="category-panel"
+                  aria-expanded={activeCategory?.id === category.id}
                   onClick={() => openCategory(category)}
                 >
                   <span className="teaser-copy">
@@ -166,6 +196,7 @@ export function PortfolioHome() {
         </section>
 
         <section
+          id="category-panel"
           className="category-panel"
           data-active={Boolean(activeCategory)}
           aria-hidden={!activeCategory}
@@ -182,41 +213,38 @@ export function PortfolioHome() {
                       className={activeCategory.id === category.id ? 'is-current' : ''}
                       key={category.id}
                       type="button"
-                      aria-current={activeCategory.id === category.id ? 'page' : undefined}
+                      aria-pressed={activeCategory.id === category.id}
                       onClick={() => openCategory(category)}
                     >
                       {category.title}
                     </button>
                   ))}
                 </nav>
-                <p className="panel-note">A practice shaped by people, place, and possibility.</p>
               </div>
 
-              <div className="panel-projects">
+              <div className="panel-projects" key={activeCategory.id}>
                 <div className="panel-heading-row">
                   <p className="panel-kicker">Selected work</p>
-                  <span className="project-count">01</span>
                 </div>
                 <h2 id="panel-heading" ref={panelHeadingRef} tabIndex={-1}>
                   {activeCategory.title}
                 </h2>
-                <p className="panel-description">{activeCategory.description}</p>
-                <div className="project-list" aria-label={`${activeCategory.title} projects`}>
-                  <div className="project-row">
-                    <div>
-                      <p className="project-status">Case study in progress</p>
-                      <Link
-                        className="project-link"
-                        href="/case-studies/project-title-coming-soon"
-                      >
-                        <h3>Project title coming soon</h3>
-                      </Link>
-                    </div>
-                  </div>
-                  <p className="project-footnote">
-                    Project titles and case studies will be added as this portfolio develops.
-                  </p>
-                </div>
+                <ul className="project-list" aria-label={`${activeCategory.title} projects`}>
+                  {activeCategory.projects.map((project) => (
+                    <li className="project-row" key={project.title}>
+                      <div>
+                        <p className="project-status">{project.status}</p>
+                        {project.href ? (
+                          <Link className="project-link" href={project.href}>
+                            <h3>{project.title}</h3>
+                          </Link>
+                        ) : (
+                          <h3>{project.title}</h3>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           )}
