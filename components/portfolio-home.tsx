@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 type Category = {
@@ -142,7 +143,7 @@ export function PortfolioHome() {
             </section>
 
             <nav className="category-list" aria-label="Explore portfolio categories">
-              {categories.map((category, index) => (
+              {categories.map((category) => (
                 <button
                   className="category-teaser"
                   key={category.id}
@@ -204,7 +205,12 @@ export function PortfolioHome() {
                   <div className="project-row">
                     <div>
                       <p className="project-status">Case study in progress</p>
-                      <h3>Project title coming soon</h3>
+                      <Link
+                        className="project-link"
+                        href="/case-studies/project-title-coming-soon"
+                      >
+                        <h3>Project title coming soon</h3>
+                      </Link>
                     </div>
                   </div>
                   <p className="project-footnote">
