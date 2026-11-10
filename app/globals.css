@@ -411,7 +411,7 @@ button:focus-visible {
 
 .category-teaser {
   display: grid;
-  grid-template-columns: 46px 1fr 28px;
+  grid-template-columns: minmax(0, 1fr) 28px;
   align-items: start;
   gap: 18px;
   min-height: 204px;
@@ -441,6 +441,7 @@ button:focus-visible {
 }
 
 .teaser-title {
+  width: 100%;
   color: var(--portfolio-title);
   font-family: 'Source Serif Pro', 'Source Serif 4', Georgia, serif;
   font-size: clamp(36px, 4vw, 54px);
@@ -705,7 +706,7 @@ button:focus-visible {
   }
 
   .category-teaser {
-    grid-template-columns: 28px 1fr 18px;
+    grid-template-columns: minmax(0, 1fr) 18px;
     gap: 8px;
     min-height: 150px;
     padding: 20px 0 26px;
