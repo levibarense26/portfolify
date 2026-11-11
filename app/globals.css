@@ -955,7 +955,7 @@ button:focus-visible {
 
 .case-study-overview {
   max-width: 720px;
-  margin: 10px 0 0;
+  margin: 26px 0 0;
   color: var(--portfolio-copy);
   font-size: clamp(19px, 2vw, 24px);
   line-height: 1.55;
@@ -1152,7 +1152,7 @@ button:focus-visible {
   }
 
   .case-study-overview {
-    margin-top: 10px;
+    margin-top: 22px;
     font-size: 18px;
   }
 
