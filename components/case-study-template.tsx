@@ -30,12 +30,6 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
             <p className="case-study-hero-note">
               A project in <span>{caseStudy.category.toLowerCase()}</span>
             </p>
-          </header>
-
-          <section className="case-study-about" aria-labelledby="case-study-about-title">
-            <div className="case-study-section-heading">
-              <h2 id="case-study-about-title">About this project</h2>
-            </div>
 
             <div className="case-study-about-content">
               <dl className="case-study-meta">
@@ -53,6 +47,12 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
                 </div>
               </dl>
               <p className="case-study-overview">{caseStudy.overview}</p>
+            </div>
+          </header>
+
+          <section className="case-study-about" aria-labelledby="case-study-about-title">
+            <div className="case-study-section-heading">
+              <h2 id="case-study-about-title">About this project</h2>
             </div>
           </section>
 

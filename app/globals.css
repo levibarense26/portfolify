@@ -926,6 +926,10 @@ button:focus-visible {
   min-width: 0;
 }
 
+.case-study-hero .case-study-about-content {
+  margin-top: 36px;
+}
+
 .case-study-meta {
   display: grid;
   grid-template-columns: 1.25fr 0.8fr 1fr;
