@@ -28,33 +28,20 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
             </p>
             <h1>{caseStudy.title}</h1>
             <p className="case-study-hero-note">
-              A project in <span>{caseStudy.category.toLowerCase()}</span>
+              Project type: <span>{caseStudy.category.toLowerCase()}</span>
             </p>
 
             <div className="case-study-about-content">
-              <dl className="case-study-meta">
-                <div>
-                  <dt>Teammates</dt>
-                  <dd>{caseStudy.teammates.join(', ')}</dd>
-                </div>
-                <div>
-                  <dt>Class</dt>
-                  <dd>{caseStudy.course}</dd>
-                </div>
-                <div>
-                  <dt>Professor</dt>
-                  <dd>{caseStudy.professor}</dd>
-                </div>
-              </dl>
+              <ul className="case-study-meta" aria-label="Project details">
+                <li aria-label={`Teammates: ${caseStudy.teammates.join(', ')}`}>
+                  {caseStudy.teammates.join(', ')}
+                </li>
+                <li aria-label={`Class: ${caseStudy.course}`}>{caseStudy.course}</li>
+                <li aria-label={`Professor: ${caseStudy.professor}`}>{caseStudy.professor}</li>
+              </ul>
               <p className="case-study-overview">{caseStudy.overview}</p>
             </div>
           </header>
-
-          <section className="case-study-about" aria-labelledby="case-study-about-title">
-            <div className="case-study-section-heading">
-              <h2 id="case-study-about-title">About this project</h2>
-            </div>
-          </section>
 
           <section className="case-study-gallery" aria-labelledby="case-study-gallery-title">
             <div className="case-study-gallery-heading">
