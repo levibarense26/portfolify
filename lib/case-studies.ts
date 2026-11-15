@@ -52,7 +52,8 @@ export const caseStudies: Record<string, CaseStudyContent> = {
     title: 'Codesign with Youth in AV Development',
     category: 'Design research',
     teammates: ['Levi Barense', 'Amy Boeving', 'Swasti Hiremani', 'Jonah Riddle'],
-    course: 'UT 210',
+    course: 'UT 210 Listening: Design Ethnography',
+      professor: 'Dr. Sheng Hung Lee',
     overview:
       'In one of two research-based studios that served as introductions to the design component of the Urban Technology degree, our team worked with General Motors to explore how people might use autonomous vehicles (AVs) in the future. We used grounded theory and design ethnography methods to develop findings with our participants. During the semester, our team submitted an abstract to IDSA’s International Design Conference, and our submission was accepted. Once we finished our research, we wrote a research paper that developed insights into design research, codesign, and the social implications of AVs.',
     shortDescription:

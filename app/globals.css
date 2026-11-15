@@ -924,7 +924,7 @@ button:focus-visible {
 }
 
 .case-study-meta li:first-child {
-  color: var(--border);
+  color: var(--portfolio-green);
 }
 
 .case-study-overview {
@@ -1046,17 +1046,10 @@ button:focus-visible {
 }
 
 .case-study-endmark {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  padding-top: 84px;
-}
-
-.case-study-endmark span {
-  width: 9px;
-  height: 9px;
-  border: 1px solid var(--portfolio-green);
-  border-radius: 50%;
+  min-height: 480px;
+  margin-top: 84px;
+  border: 1px solid rgba(71, 120, 60, 0.35);
+  background: rgba(71, 120, 60, 0.035);
 }
 
 @media (max-width: 760px) {

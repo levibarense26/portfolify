@@ -108,9 +108,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
             </section>
           ) : null}
 
-          <div className="case-study-endmark" aria-hidden="true">
-            <span />
-          </div>
+          <div className="case-study-endmark" aria-label="Full slide deck" role="region" />
         </article>
       </div>
 
