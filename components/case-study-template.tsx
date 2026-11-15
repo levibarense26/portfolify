@@ -62,13 +62,9 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
       <div className="case-study-stage">
         <article className="case-study-content">
           <header className="case-study-hero">
-            <p className="case-study-kicker">
-              <span className="case-study-kicker-chip">Case study</span>
-              <span>{caseStudy.category}</span>
-            </p>
             <h1>{caseStudy.title}</h1>
             <p className="case-study-hero-note">
-              Project type: <span>{caseStudy.category.toLowerCase()}</span>
+              Project type: <span>{caseStudy.projectType ?? caseStudy.category.toLowerCase()}</span>
             </p>
 
             <div className="case-study-about-content">
@@ -117,7 +113,6 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
           ) : null}
 
           <div className="case-study-endmark" aria-hidden="true">
-            <span />
             <span />
           </div>
         </article>

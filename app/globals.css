@@ -862,31 +862,12 @@ button:focus-visible {
   padding-bottom: 0;
 }
 
-.case-study-kicker {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin: 0 0 30px;
-  color: var(--portfolio-green);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.case-study-kicker-chip {
-  padding: 7px 10px;
-  border: 1px solid rgba(71, 120, 60, 0.4);
-  background: rgba(71, 120, 60, 0.08);
-}
-
 .case-study-hero h1 {
   max-width: 12ch;
   margin: 0;
   color: var(--portfolio-title);
   font-family: 'Source Serif Pro', 'Source Serif 4', Georgia, serif;
-  font-size: clamp(68px, 10vw, 138px);
+  font-size: 96px;
   font-weight: 700;
   letter-spacing: -0.055em;
   line-height: 0.94;
@@ -911,6 +892,10 @@ button:focus-visible {
   font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 1;
+}
+
+#case-study-gallery-title {
+  font-style: italic;
 }
 
 .case-study-about-content {
@@ -939,7 +924,7 @@ button:focus-visible {
 }
 
 .case-study-overview {
-  max-width: 720px;
+  max-width: none;
   margin: 26px 0 0;
   color: var(--portfolio-copy);
   font-size: clamp(19px, 2vw, 24px);
@@ -962,7 +947,7 @@ button:focus-visible {
   max-width: 340px;
   margin: 0 0 4px;
   color: var(--portfolio-copy);
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.5;
   text-align: right;
 }
@@ -1052,7 +1037,7 @@ button:focus-visible {
   gap: 0;
   margin-top: 14px;
   color: var(--portfolio-copy);
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.5;
 }
 
@@ -1068,10 +1053,6 @@ button:focus-visible {
   height: 9px;
   border: 1px solid var(--portfolio-green);
   border-radius: 50%;
-}
-
-.case-study-endmark span:first-child {
-  background: var(--portfolio-green);
 }
 
 @media (max-width: 760px) {
@@ -1096,12 +1077,6 @@ button:focus-visible {
 
   .case-study-hero {
     padding-bottom: 0;
-  }
-
-  .case-study-kicker {
-    gap: 8px;
-    margin-bottom: 22px;
-    font-size: 10px;
   }
 
   .case-study-hero h1 {

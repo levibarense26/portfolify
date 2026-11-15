@@ -14,6 +14,7 @@ export type CaseStudyContent = {
   professor?: string
   overview: string
   shortDescription?: string
+  projectType?: string
   galleryTitle?: string
   galleryNote?: string
   figures: CaseStudyFigure[]
@@ -56,7 +57,8 @@ export const caseStudies: Record<string, CaseStudyContent> = {
       'In one of two research-based studios that served as introductions to the design component of the Urban Technology degree, our team worked with General Motors to explore how people might use autonomous vehicles (AVs) in the future. We used grounded theory and design ethnography methods to develop findings with our participants. During the semester, our team submitted an abstract to IDSA’s International Design Conference, and our submission was accepted. Once we finished our research, we wrote a research paper that developed insights into design research, codesign, and the social implications of AVs.',
     shortDescription:
       'Tasked with exploring ‘the Future Autonomous Experience’ with the support of GM, our team used design ethnography and codesign to explore how autonomous vehicles might affect how adolescents develop their independence.',
-    galleryTitle: 'Research process',
+    projectType: 'interviewing, design research, and codesign',
+    galleryTitle: 'Project Details',
     galleryNote: 'Interview materials, recruitment, and rapid iteration shaped our research with adolescents and their families.',
     figures: [
       {
