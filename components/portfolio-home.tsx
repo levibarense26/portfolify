@@ -28,6 +28,12 @@ const placeholderProjects: ProjectPlaceholder[] = [
   },
 ]
 
+const youthAvProject: ProjectPlaceholder = {
+  title: 'Codesign with Youth in AV Development',
+  status: 'Design research · General Motors',
+  href: '/case-studies/codesign-with-youth-in-av-development',
+}
+
 const categories: Category[] = [
   {
     id: 'organizing',
@@ -48,7 +54,7 @@ const categories: Category[] = [
     title: 'Design Research',
     description:
       'I enjoy using creative methods to find problems by talking to key stakeholders with diverse experiences.',
-    projects: placeholderProjects,
+    projects: [youthAvProject, ...placeholderProjects],
   },
   {
     id: 'writing',

@@ -1,9 +1,49 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import type { CaseStudyContent } from '@/lib/case-studies'
+import type { CaseStudyContent, CaseStudyFigure } from '@/lib/case-studies'
 
 type CaseStudyTemplateProps = {
   caseStudy: CaseStudyContent
+}
+
+type CaseStudyFigureGridProps = {
+  figures: CaseStudyFigure[]
+}
+
+function CaseStudyFigureGrid({ figures }: CaseStudyFigureGridProps) {
+  return (
+    <div className="case-study-figure-grid">
+      {figures.map((figure, index) => (
+        <figure
+          className={`case-study-figure case-study-figure-${index + 1}`}
+          key={figure.number}
+        >
+          <div
+            className="case-study-image-frame"
+            style={figure.aspectRatio ? { aspectRatio: figure.aspectRatio } : undefined}
+          >
+            {figure.imageSrc ? (
+              <Image
+                className="case-study-image"
+                src={figure.imageSrc}
+                alt={figure.imageAlt}
+                fill
+                sizes="(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 70vw"
+              />
+            ) : (
+              <div className="case-study-image-slot" aria-hidden="true">
+                <span className="case-study-slot-number">Frame {figure.number}</span>
+                <span className="case-study-slot-label">Image frame</span>
+              </div>
+            )}
+          </div>
+          <figcaption>
+            <span>{figure.caption}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  )
 }
 
 export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
@@ -37,7 +77,11 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
                   {caseStudy.teammates.join(', ')}
                 </li>
                 <li aria-label={`Class: ${caseStudy.course}`}>{caseStudy.course}</li>
-                <li aria-label={`Professor: ${caseStudy.professor}`}>{caseStudy.professor}</li>
+                {caseStudy.professor ? (
+                  <li aria-label={`Professor: ${caseStudy.professor}`}>
+                    {caseStudy.professor}
+                  </li>
+                ) : null}
               </ul>
               <p className="case-study-overview">{caseStudy.overview}</p>
             </div>
@@ -46,42 +90,31 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
           <section className="case-study-gallery" aria-labelledby="case-study-gallery-title">
             <div className="case-study-gallery-heading">
               <div className="case-study-section-heading">
-                <h2 id="case-study-gallery-title">Selected frames</h2>
+                <h2 id="case-study-gallery-title">
+                  {caseStudy.galleryTitle ?? 'Selected frames'}
+                </h2>
               </div>
               <p className="case-study-gallery-note">
-                Add project images and update each caption as the story takes shape.
+                {caseStudy.galleryNote ??
+                  'Add project images and update each caption as the story takes shape.'}
               </p>
             </div>
-
-            <div className="case-study-figure-grid">
-              {caseStudy.figures.map((figure, index) => (
-                <figure
-                  className={`case-study-figure case-study-figure-${index + 1}`}
-                  key={figure.number}
-                >
-                  <div className="case-study-image-frame">
-                    {figure.imageSrc ? (
-                      <Image
-                        className="case-study-image"
-                        src={figure.imageSrc}
-                        alt={figure.imageAlt}
-                        fill
-                        sizes="(max-width: 760px) 100vw, 70vw"
-                      />
-                    ) : (
-                      <div className="case-study-image-slot" aria-hidden="true">
-                        <span className="case-study-slot-number">Frame {figure.number}</span>
-                        <span className="case-study-slot-label">Image frame</span>
-                      </div>
-                    )}
-                  </div>
-                  <figcaption>
-                    <span>{figure.caption}</span>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
+            <CaseStudyFigureGrid figures={caseStudy.figures} />
           </section>
+
+          {caseStudy.insights?.length ? (
+            <section
+              className="case-study-gallery case-study-insights"
+              aria-labelledby="case-study-insights-title"
+            >
+              <div className="case-study-gallery-heading">
+                <div className="case-study-section-heading">
+                  <h2 id="case-study-insights-title">Insights</h2>
+                </div>
+              </div>
+              <CaseStudyFigureGrid figures={caseStudy.insights} />
+            </section>
+          ) : null}
 
           <div className="case-study-endmark" aria-hidden="true">
             <span />
