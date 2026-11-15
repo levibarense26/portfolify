@@ -53,14 +53,14 @@ const categories: Category[] = [
     title: 'Systems Analysis',
     description:
       'Systems are what run our world. Understanding them and what makes them inefficient is key to changing them.',
-    projects: placeholderProjects,
+    projects: [rebarProject, ...placeholderProjects],
   },
   {
     id: 'design-research',
     title: 'Design Research',
     description:
       'I enjoy using creative methods to find problems by talking to key stakeholders with diverse experiences.',
-    projects: [rebarProject, youthAvProject, ...placeholderProjects],
+    projects: [youthAvProject, ...placeholderProjects],
   },
   {
     id: 'writing',
