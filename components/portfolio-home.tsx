@@ -114,18 +114,7 @@ export function PortfolioHome() {
   return (
     <main className="portfolio-shell">
       <header className="site-bar">
-        <button
-          className="home-control"
-          type="button"
-          ref={homeControlRef}
-          onClick={closeCategory}
-          aria-label="Return to the home page"
-        >
-          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-            <path d="M7 4.9c0-.8.9-1.3 1.6-.9l11 6.5a1.7 1.7 0 0 1 0 2.9l-11 6.5c-.7.4-1.6-.1-1.6-.9V4.9Z" />
-          </svg>
-          <span>Home</span>
-        </button>
+        
 
         <div className="site-menu-wrap">
           <button
@@ -161,6 +150,18 @@ export function PortfolioHome() {
           aria-hidden={Boolean(activeCategory)}
           inert={Boolean(activeCategory)}
         >
+          <button
+          className="home-control"
+          type="button"
+          ref={homeControlRef}
+          onClick={closeCategory}
+          aria-label="Return to the home page"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+            <path d="M7 4.9c0-.8.9-1.3 1.6-.9l11 6.5a1.7 1.7 0 0 1 0 2.9l-11 6.5c-.7.4-1.6-.1-1.6-.9V4.9Z" />
+          </svg>
+          <span>Home</span>
+        </button>
           <div className="home-content">
             <section className="intro-section" aria-labelledby="home-heading">
               <div className="overlap-rings" aria-hidden="true">
@@ -169,7 +170,6 @@ export function PortfolioHome() {
               </div>
 
               <div className="intro-copy">
-                <p className="intro-label">Systems thinker · organizer · designer</p>
                 <h1 id="home-heading">
                   Levi
                   <br />

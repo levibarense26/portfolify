@@ -34,6 +34,7 @@ export const caseStudies: Record<string, CaseStudyContent> = {
     course: 'UT 230',
     professor: 'Wonyoung So',
     overview: annArborOverview,
+    galleryTitle: 'Final Poster',
     overviewAsLeadCaption: true,
     shortDescription:
       'An urban observation and data visualization project about storefront communication across four downtown Ann Arbor business areas.',
@@ -110,7 +111,7 @@ export const caseStudies: Record<string, CaseStudyContent> = {
       'This team project was completed for a Business+Tech Innovation Jam through the Ross School of Business. Competitors are first asked to identify a real problem which entrepreneurship could contribute to solving. Inspired by one of our teammate’s struggles with nearby construction noise, we aimed to create a platform which would enable contractors to inform residents that are affected by construction side effects.',
     shortDescription:
       'A mock startup developed to fill a gap in communication between contractors and nearby residents in the current construction system. Our team identified a problem, ideated upon solutions, and created wireframes for a potential product intervention.',
-    galleryTitle: 'Rebar: from problem to product',
+    galleryTitle: 'Project Details',
     galleryNote:
       'A mock startup concept that connects contractors and nearby residents through timely project updates and feedback.',
     figures: [
