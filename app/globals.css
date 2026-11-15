@@ -923,6 +923,10 @@ button:focus-visible {
   line-height: 1.4;
 }
 
+.case-study-meta li:first-child {
+  color: var(--border);
+}
+
 .case-study-overview {
   max-width: none;
   margin: 26px 0 0;

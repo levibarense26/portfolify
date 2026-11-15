@@ -63,14 +63,10 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
         <article className="case-study-content">
           <header className="case-study-hero">
             <h1>{caseStudy.title}</h1>
-            <p className="case-study-hero-note">
-              Project type: <span>{caseStudy.projectType ?? caseStudy.category.toLowerCase()}</span>
-            </p>
-
             <div className="case-study-about-content">
               <ul className="case-study-meta" aria-label="Project details">
-                <li aria-label={`Teammates: ${caseStudy.teammates.join(', ')}`}>
-                  {caseStudy.teammates.join(', ')}
+                <li aria-label={`Collaborators: ${caseStudy.teammates.slice(1).join(', ')}`}>
+                  {`In collaboration with ${caseStudy.teammates.slice(1).join(', ')}`}
                 </li>
                 <li aria-label={`Class: ${caseStudy.course}`}>{caseStudy.course}</li>
                 {caseStudy.professor ? (
