@@ -48,6 +48,81 @@ export const caseStudies: Record<string, CaseStudyContent> = {
       },
     ],
   },
+  'rebar-construction-communication': {
+    title: 'Rebar',
+    category: 'Business + Tech Innovation',
+    teammates: [],
+    course: 'Business+Tech Innovation Jam',
+    overview:
+      'This team project was completed for a Business+Tech Innovation Jam through the Ross School of Business. Competitors are first asked to identify a real problem which entrepreneurship could contribute to solving. Inspired by one of our teammate’s struggles with nearby construction noise, we aimed to create a platform which would enable contractors to inform residents that are affected by construction side effects.',
+    shortDescription:
+      'A mock startup developed to fill a gap in communication between contractors and nearby residents in the current construction system. Our team identified a problem, ideated upon solutions, and created wireframes for a potential product intervention.',
+    galleryTitle: 'Rebar: from problem to product',
+    galleryNote:
+      'A mock startup concept that connects contractors and nearby residents through timely project updates and feedback.',
+    figures: [
+      {
+        number: '01',
+        imageSrc:
+          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Jy9J3CnTvipPLgYE8zPrArt41r0OYy.png',
+        imageAlt:
+          'Slide titled Developer Pain Points listing manual resident updates, difficult feedback, and trust challenges for small construction firms.',
+        caption:
+          'Our process began with evaluating the current conditions of the market and identifying the different stakeholders and their priorities.',
+        aspectRatio: '16 / 9',
+      },
+      {
+        number: '02',
+        imageSrc:
+          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-GSNzxPPRAHWOY18tt8qzvIbpuCnuSM.png',
+        imageAlt:
+          'Problem mapping diagram connecting resident clarity, developer feedback, and construction timeline visibility.',
+        caption:
+          'Problem mapping helped our team understand the intersections of the different stakeholders’ opinions and struggles.',
+        aspectRatio: '16 / 9',
+      },
+      {
+        number: '03',
+        imageSrc:
+          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-OgIz33KSJkRY7AuWpdMORiF5uYNVrm.png',
+        imageAlt:
+          'Solution slide outlining reduced wasted time, reduced costs, and increased trust and transparency.',
+        caption:
+          'We mapped potential solutions and ideated potential products that could be designed to alleviate the burdens which construction can create.',
+        aspectRatio: '16 / 9',
+      },
+      {
+        number: '04',
+        imageSrc:
+          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XTYnzuZRi5CkF2XegsIIyvSH2kOwUi.png',
+        imageAlt:
+          'Product demo slide showing Rebar project notifications, a project update feed, and resident feedback.',
+        caption:
+          'Our team settled on an app that serves as a hub for nearby construction projects. Contractors could alert neighbors of service notices and timeline changes. Residents would be able to give feedback and updates about each project.',
+        aspectRatio: '16 / 9',
+      },
+      {
+        number: '05',
+        imageSrc:
+          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-y6Bhbuh2ImTRmHGzvWhqHmpK59dvVj.png',
+        imageAlt:
+          'Alternate product demo view of Rebar with project cards, construction notices, and a resident feedback callout.',
+        caption:
+          'The Rebar concept brings project notices and updates into one place, making it easier for residents to stay informed and share feedback.',
+        aspectRatio: '16 / 9',
+      },
+      {
+        number: '06',
+        imageSrc:
+          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5frkenhkiQbqtfpMFh7KtjfuHKu5kQ.png',
+        imageAlt:
+          'Rebar closing slide describing communication between developers and residents and a more streamlined, informed construction process.',
+        caption:
+          'We imagined developers requiring contractors to use Rebar to help build trust and transparency with nearby residents.',
+        aspectRatio: '16 / 9',
+      },
+    ],
+  },
   'codesign-with-youth-in-av-development': {
     title: 'Codesign with Youth in AV Development',
     category: 'Design research',

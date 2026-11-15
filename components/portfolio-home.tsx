@@ -34,6 +34,12 @@ const youthAvProject: ProjectPlaceholder = {
   href: '/case-studies/codesign-with-youth-in-av-development',
 }
 
+const rebarProject: ProjectPlaceholder = {
+  title: 'Rebar',
+  status: 'Business+Tech Innovation Jam · Ross School of Business',
+  href: '/case-studies/rebar-construction-communication',
+}
+
 const categories: Category[] = [
   {
     id: 'organizing',
@@ -54,7 +60,7 @@ const categories: Category[] = [
     title: 'Design Research',
     description:
       'I enjoy using creative methods to find problems by talking to key stakeholders with diverse experiences.',
-    projects: [youthAvProject, ...placeholderProjects],
+    projects: [rebarProject, youthAvProject, ...placeholderProjects],
   },
   {
     id: 'writing',

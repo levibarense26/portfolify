@@ -847,6 +847,10 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
+.portfolio-shell.case-study-shell {
+  color: var(--portfolio-paper);
+}
+
 .case-study-stage {
   background: var(--portfolio-paper);
 }
@@ -1045,13 +1049,6 @@ button:focus-visible {
   line-height: 1.5;
 }
 
-.case-study-endmark {
-  min-height: 480px;
-  margin-top: 84px;
-  border: 1px solid rgba(71, 120, 60, 0.35);
-  background: rgba(71, 120, 60, 0.035);
-}
-
 @media (max-width: 760px) {
   .case-study-content {
     padding: 44px 22px 72px;
@@ -1131,7 +1128,4 @@ button:focus-visible {
     font-size: 28px;
   }
 
-  .case-study-endmark {
-    padding-top: 58px;
-  }
 }

@@ -65,9 +65,11 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
             <h1>{caseStudy.title}</h1>
             <div className="case-study-about-content">
               <ul className="case-study-meta" aria-label="Project details">
-                <li aria-label={`Collaborators: ${caseStudy.teammates.slice(1).join(', ')}`}>
-                  {`In collaboration with ${caseStudy.teammates.slice(1).join(', ')}`}
-                </li>
+                {caseStudy.teammates.length > 1 ? (
+                  <li aria-label={`Collaborators: ${caseStudy.teammates.slice(1).join(', ')}`}>
+                    {`In collaboration with ${caseStudy.teammates.slice(1).join(', ')}`}
+                  </li>
+                ) : null}
                 <li aria-label={`Class: ${caseStudy.course}`}>{caseStudy.course}</li>
                 {caseStudy.professor ? (
                   <li aria-label={`Professor: ${caseStudy.professor}`}>
@@ -108,7 +110,6 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
             </section>
           ) : null}
 
-          <div className="case-study-endmark" aria-label="Full slide deck" role="region" />
         </article>
       </div>
 

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
 
   return {
     title: `${caseStudy.title} | Levi Barense`,
-    description: caseStudy.overview,
+    description: caseStudy.shortDescription ?? caseStudy.overview,
   }
 }
 
