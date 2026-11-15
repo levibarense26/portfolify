@@ -17,11 +17,64 @@ export type CaseStudyContent = {
   projectType?: string
   galleryTitle?: string
   galleryNote?: string
+  overviewAsLeadCaption?: boolean
   figures: CaseStudyFigure[]
   insights?: CaseStudyFigure[]
 }
 
+const annArborImages = '/case-studies/making-data-in-downtown-ann-arbor'
+const annArborOverview =
+  'This project asked us to observe and make data around a particular urban object. We were asked to identify, count, and classify different types of the object to understand how they interface with their overarching urban system. My chosen system was communication and I chose to observe the storefronts of different businesses around downtown Ann Arbor. I started off by collecting data on all businesses in the four business areas in Ann Arbor: Kerrytown, Main street, State street, and South university. I collected 311 data points representing 166 businesses. I eventually divided the businesses into categories of slow, fast, and cafe, which is both slow and fast, and compared the cafes based off the area of downtown they were in.'
+
 export const caseStudies: Record<string, CaseStudyContent> = {
+  'making-data-in-downtown-ann-arbor': {
+    title: 'Making Data in Downtown Ann Arbor',
+    category: 'Design Research',
+    teammates: ['Levi Barense'],
+    course: 'UT 230',
+    professor: 'Wonyoung So',
+    overview: annArborOverview,
+    overviewAsLeadCaption: true,
+    shortDescription:
+      'An urban observation and data visualization project about storefront communication across four downtown Ann Arbor business areas.',
+    figures: [
+      {
+        number: '01',
+        imageSrc: `${annArborImages}/final-poster.png`,
+        imageAlt: 'Final poster mapping Ann Arbor storefronts and comparing cafe marketing ratings across four business areas.',
+        caption: annArborOverview,
+        aspectRatio: '1366 / 2112',
+      },
+      {
+        number: '02',
+        imageSrc: `${annArborImages}/first-draft.png`,
+        imageAlt: 'First poster draft with bar charts, four neighborhood maps, and examples of restaurant storefronts.',
+        caption: 'My first draft was an uninspired display of visuals. My classmates critiqued that there was too much text, that the text and colors were ununiform, and that there was no clear throughline. I came away understanding I needed to make sure that I was making a clear storyline that was supported by clear visuals, short captions, and impactful colors.',
+        aspectRatio: '1366 / 2112',
+      },
+      {
+        number: '03',
+        imageSrc: `${annArborImages}/second-draft.png`,
+        imageAlt: 'Second poster draft with one map of the four business areas, connecting arrows, and green doughnut charts.',
+        caption: 'My second iteration used a better connected map to help the viewer see the spatial configuration of the four business areas. Using lines and bubbles I attempted to create a cohesive flow through the poster. I was given feedback saying that the colors felt disconnected and that after the line graph, the visual become cluttered and unclear. For my final submission I changed the colors so that they were cohesive with the map, added labels, and added an example of what high marketing looks like to ground the research and the visual.',
+        aspectRatio: '1366 / 2112',
+      },
+      {
+        number: '04',
+        imageSrc: `${annArborImages}/data-snapshot.png`,
+        imageAlt: 'Spreadsheet showing storefront observations coded by neighborhood, business pace, signage, and marketing rating.',
+        caption: 'Snapshot of data that shows the coding of each business and the criteria that each cafe was examined upon.',
+        aspectRatio: '2773 / 960',
+      },
+      {
+        number: '05',
+        imageSrc: `${annArborImages}/pin-up.png`,
+        imageAlt: 'Second draft pinned to a wall with process posters documenting earlier charts, data collection, and color revisions.',
+        caption: 'Pin-up with additional process posters for the second draft',
+        aspectRatio: '1366 / 1070',
+      },
+    ],
+  },
   'project-title-coming-soon': {
     title: 'Project title coming soon',
     category: 'Project category',

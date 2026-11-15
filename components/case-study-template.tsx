@@ -60,7 +60,9 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
       </header>
 
       <div className="case-study-stage">
-        <article className="case-study-content">
+        <article
+          className={`case-study-content${caseStudy.overviewAsLeadCaption ? ' case-study-poster-layout' : ''}`}
+        >
           <header className="case-study-hero">
             <h1>{caseStudy.title}</h1>
             <div className="case-study-about-content">
@@ -77,22 +79,30 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
                   </li>
                 ) : null}
               </ul>
-              <p className="case-study-overview">{caseStudy.overview}</p>
+              {caseStudy.overviewAsLeadCaption ? null : (
+                <p className="case-study-overview">{caseStudy.overview}</p>
+              )}
             </div>
           </header>
 
-          <section className="case-study-gallery" aria-labelledby="case-study-gallery-title">
-            <div className="case-study-gallery-heading">
-              <div className="case-study-section-heading">
-                <h2 id="case-study-gallery-title">
-                  {caseStudy.galleryTitle ?? 'Selected frames'}
-                </h2>
+          <section
+            className="case-study-gallery"
+            aria-label={caseStudy.overviewAsLeadCaption ? 'Project figures' : undefined}
+            aria-labelledby={caseStudy.overviewAsLeadCaption ? undefined : 'case-study-gallery-title'}
+          >
+            {caseStudy.overviewAsLeadCaption ? null : (
+              <div className="case-study-gallery-heading">
+                <div className="case-study-section-heading">
+                  <h2 id="case-study-gallery-title">
+                    {caseStudy.galleryTitle ?? 'Selected frames'}
+                  </h2>
+                </div>
+                <p className="case-study-gallery-note">
+                  {caseStudy.galleryNote ??
+                    'Add project images and update each caption as the story takes shape.'}
+                </p>
               </div>
-              <p className="case-study-gallery-note">
-                {caseStudy.galleryNote ??
-                  'Add project images and update each caption as the story takes shape.'}
-              </p>
-            </div>
+            )}
             <CaseStudyFigureGrid figures={caseStudy.figures} />
           </section>
 

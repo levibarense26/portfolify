@@ -34,6 +34,12 @@ const youthAvProject: ProjectPlaceholder = {
   href: '/case-studies/codesign-with-youth-in-av-development',
 }
 
+const annArborDataProject: ProjectPlaceholder = {
+  title: 'Making Data in Downtown Ann Arbor',
+  status: 'Urban observation · Data visualization',
+  href: '/case-studies/making-data-in-downtown-ann-arbor',
+}
+
 const rebarProject: ProjectPlaceholder = {
   title: 'Rebar',
   status: 'Business+Tech Innovation Jam · Ross School of Business',
@@ -60,7 +66,7 @@ const categories: Category[] = [
     title: 'Design Research',
     description:
       'I enjoy using creative methods to find problems by talking to key stakeholders with diverse experiences.',
-    projects: [youthAvProject, ...placeholderProjects],
+    projects: [youthAvProject, annArborDataProject],
   },
   {
     id: 'writing',
