@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
+import { BackToPortfolio } from '@/components/back-to-portfolio'
 
 type ProjectPlaceholder = {
   title: string
@@ -16,17 +17,7 @@ type Category = {
   projects: ProjectPlaceholder[]
 }
 
-const placeholderProjects: ProjectPlaceholder[] = [
-  {
-    title: 'Project title coming soon',
-    status: 'Case study in progress',
-    href: '/case-studies/project-title-coming-soon',
-  },
-  {
-    title: 'Second project coming soon',
-    status: 'Project placeholder',
-  },
-]
+
 
 const youthAvProject: ProjectPlaceholder = {
   title: 'Codesign with Youth in AV Development',
@@ -42,24 +33,30 @@ const annArborDataProject: ProjectPlaceholder = {
 
 const rebarProject: ProjectPlaceholder = {
   title: 'Rebar',
-  status: 'Business+Tech Innovation Jam · Ross School of Business',
+  status: 'A mock startup developed to fill a gap in communication between contractors and nearby residents  in the current construction system.  Our team identified a problem, ideated upon solutions, and created wireframes for a potential product intervention.',
   href: '/case-studies/rebar-construction-communication',
 }
 
+const diningHallProject: ProjectPlaceholder = {
+  title: 'Dining Hall Mechanics',
+  status: 'Business+Tech Innovation Jam · Ross School of Business',
+  href: '/case-studies/dining-hall-mechanics',
+}
+
 const categories: Category[] = [
-  {
-    id: 'organizing',
-    title: 'Organizing',
-    description:
-      'Working with others to build community and collectively deciding actions to take together.',
-    projects: placeholderProjects,
-  },
+  // {
+  //   id: 'organizing',
+  //   title: 'Organizing',
+  //   description:
+  //     'Working with others to build community and collectively deciding actions to take together.',
+  //   projects: placeholderProjects,
+  // },
   {
     id: 'systems-analysis',
     title: 'Systems Analysis',
     description:
       'Systems are what run our world. Understanding them and what makes them inefficient is key to changing them.',
-    projects: [rebarProject, ...placeholderProjects],
+    projects: [rebarProject, diningHallProject],
   },
   {
     id: 'design-research',
@@ -68,18 +65,18 @@ const categories: Category[] = [
       'I enjoy using creative methods to find problems by talking to key stakeholders with diverse experiences.',
     projects: [youthAvProject, annArborDataProject],
   },
-  {
-    id: 'writing',
-    title: 'Writing',
-    description: 'Writing is how my best thoughts get fleshed out. Read a few of my pieces.',
-    projects: placeholderProjects,
-  },
+  // {
+  //   id: 'writing',
+  //   title: 'Writing',
+  //   description: 'Writing is how my best thoughts get fleshed out. Read a few of my pieces.',
+  //   projects: placeholderProjects,
+  // },
 ]
 
 export function PortfolioHome() {
   const [activeCategory, setActiveCategory] = useState<Category | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
-  const homeControlRef = useRef<HTMLButtonElement>(null)
+  const homeHeadingRef = useRef<HTMLHeadingElement>(null)
   const panelHeadingRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
@@ -92,7 +89,7 @@ export function PortfolioHome() {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') {
         setActiveCategory(null)
-        window.requestAnimationFrame(() => homeControlRef.current?.focus())
+        window.requestAnimationFrame(() => homeHeadingRef.current?.focus({ preventScroll: true }))
       }
     }
 
@@ -107,15 +104,15 @@ export function PortfolioHome() {
   }
 
   function closeCategory() {
+    setMenuOpen(false)
     setActiveCategory(null)
-    window.requestAnimationFrame(() => homeControlRef.current?.focus())
+    window.scrollTo(0, 0)
+    window.requestAnimationFrame(() => homeHeadingRef.current?.focus({ preventScroll: true }))
   }
 
   return (
     <main className="portfolio-shell">
       <header className="site-bar">
-        
-
         <div className="site-menu-wrap">
           <button
             className={`menu-toggle${menuOpen ? ' is-open' : ''}`}
@@ -150,18 +147,6 @@ export function PortfolioHome() {
           aria-hidden={Boolean(activeCategory)}
           inert={Boolean(activeCategory)}
         >
-          <button
-          className="home-control"
-          type="button"
-          ref={homeControlRef}
-          onClick={closeCategory}
-          aria-label="Return to the home page"
-        >
-          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-            <path d="M7 4.9c0-.8.9-1.3 1.6-.9l11 6.5a1.7 1.7 0 0 1 0 2.9l-11 6.5c-.7.4-1.6-.1-1.6-.9V4.9Z" />
-          </svg>
-          <span>Home</span>
-        </button>
           <div className="home-content">
             <section className="intro-section" aria-labelledby="home-heading">
               <div className="overlap-rings" aria-hidden="true">
@@ -170,7 +155,7 @@ export function PortfolioHome() {
               </div>
 
               <div className="intro-copy">
-                <h1 id="home-heading">
+                <h1 id="home-heading" ref={homeHeadingRef} tabIndex={-1}>
                   Levi
                   <br />
                   Barense
@@ -224,6 +209,12 @@ export function PortfolioHome() {
           {activeCategory && (
             <div className="panel-content">
               <div className="panel-index">
+                <BackToPortfolio
+                  onNavigate={(event) => {
+                    event.preventDefault()
+                    closeCategory()
+                  }}
+                />
                 <p className="panel-kicker">Explore</p>
                 <nav className="panel-category-list" aria-label="Portfolio categories">
                   {categories.map((category) => (
@@ -251,7 +242,6 @@ export function PortfolioHome() {
                   {activeCategory.projects.map((project) => (
                     <li className="project-row" key={project.title}>
                       <div>
-                        <p className="project-status">{project.status}</p>
                         {project.href ? (
                           <Link className="project-link" href={project.href}>
                             <h3>{project.title}</h3>
@@ -259,6 +249,7 @@ export function PortfolioHome() {
                         ) : (
                           <h3>{project.title}</h3>
                         )}
+                        <p className="project-status">{project.status}</p>
                       </div>
                     </li>
                   ))}

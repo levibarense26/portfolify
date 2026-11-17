@@ -248,6 +248,7 @@ button:focus-visible {
 .site-menu-wrap {
   position: relative;
   z-index: 5;
+  margin-left: auto;
 }
 
 .menu-toggle {
@@ -275,27 +276,6 @@ button:focus-visible {
   transform: rotate(0deg);
 }
 
-.quick-menu {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  display: grid;
-  min-width: 220px;
-  padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: #30312f;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
-}
-
-.quick-menu button {
-  padding: 10px 12px;
-  color: #f5f2eb;
-  text-align: left;
-}
-
-.quick-menu button:hover {
-  color: #a4d192;
-}
 
 .portfolio-stage {
   position: relative;
@@ -331,11 +311,10 @@ button:focus-visible {
 .project-status {
   margin: 0;
   color: var(--portfolio-title);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
   line-height: 1.4;
-  text-transform: uppercase;
+  font-family: 'Stack Sans Text', 'Source Sans 3', Arial, sans-serif;
+  font-family: 'Stack Sans Text', 'Source Sans 3', Arial, sans-serif;
+  font-size: 14px;
 }
 
 .intro-label {
@@ -397,11 +376,6 @@ button:focus-visible {
   left: 4%;
 }
 
-.ring-two {
-  top: 31%;
-  right: 1%;
-  box-shadow: 0 0 0 3px #4caf50;
-}
 
 .category-list {
   display: grid;
@@ -604,8 +578,9 @@ button:focus-visible {
 }
 
 .project-status {
-  color: var(--portfolio-green);
-  font-size: 10px;
+  color: var(--portfolio-title);
+  font-family: 'Stack Sans Text', 'Source Sans 3', Arial, sans-serif;
+  font-size: 14px;
 }
 
 .site-footer {
@@ -805,7 +780,7 @@ button:focus-visible {
 }
 
 .project-link:focus-visible,
-.case-study-back:focus-visible {
+.return-home:focus-visible {
   outline: 2px solid var(--portfolio-green);
   outline-offset: 5px;
 }
@@ -815,22 +790,23 @@ button:focus-visible {
   margin: 0 auto;
 }
 
-.case-study-back {
+.return-home {
   display: inline-flex;
   align-items: center;
   gap: 13px;
-  padding: 8px 10px;
-  color: #f5f2eb;
+  margin-bottom: 24px;
+  padding: 8px 0;
+  color: var(--portfolio-green);
   font-size: 16px;
   text-decoration: none;
   transition: color 180ms ease;
 }
 
-.case-study-back:hover {
-  color: #a4d192;
+.return-home:hover {
+  text-decoration: underline;
 }
 
-.case-study-back svg {
+.return-home svg {
   width: 22px;
   height: 22px;
   stroke: currentColor;
@@ -840,7 +816,7 @@ button:focus-visible {
 }
 
 .case-study-bar-label {
-  margin: 0;
+  margin: 0 0 0 auto;
   color: #f5f2eb;
   font-size: 11px;
   letter-spacing: 0.14em;
@@ -1077,9 +1053,8 @@ button:focus-visible {
     gap: 12px;
   }
 
-  .case-study-back {
+  .return-home {
     gap: 8px;
-    padding-left: 5px;
     font-size: 14px;
   }
 

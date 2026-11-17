@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import { BackToPortfolio } from '@/components/back-to-portfolio'
 import type { CaseStudyContent, CaseStudyFigure } from '@/lib/case-studies'
 
 type CaseStudyTemplateProps = {
@@ -50,12 +50,6 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
   return (
     <main className="portfolio-shell case-study-shell">
       <header className="site-bar case-study-site-bar">
-        <Link className="case-study-back" href="/">
-          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-            <path d="M19 12H5m0 0 7-7m-7 7 7 7" />
-          </svg>
-          <span>Back to portfolio</span>
-        </Link>
         <p className="case-study-bar-label">Project notes · 01</p>
       </header>
 
@@ -64,6 +58,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
           className={`case-study-content${caseStudy.overviewAsLeadCaption ? ' case-study-poster-layout' : ''}`}
         >
           <header className="case-study-hero">
+            <BackToPortfolio />
             <h1>{caseStudy.title}</h1>
             <div className="case-study-about-content">
               <ul className="case-study-meta" aria-label="Project details">

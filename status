@@ -1,0 +1,72 @@
+[1mdiff --git a/components/portfolio-home.tsx b/components/portfolio-home.tsx[m
+[1mindex 177df94..4f5f73d 100644[m
+[1m--- a/components/portfolio-home.tsx[m
+[1m+++ b/components/portfolio-home.tsx[m
+[36m@@ -114,18 +114,7 @@[m [mexport function PortfolioHome() {[m
+   return ([m
+     <main className="portfolio-shell">[m
+       <header className="site-bar">[m
+[31m-        <button[m
+[31m-          className="home-control"[m
+[31m-          type="button"[m
+[31m-          ref={homeControlRef}[m
+[31m-          onClick={closeCategory}[m
+[31m-          aria-label="Return to the home page"[m
+[31m-        >[m
+[31m-          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">[m
+[31m-            <path d="M7 4.9c0-.8.9-1.3 1.6-.9l11 6.5a1.7 1.7 0 0 1 0 2.9l-11 6.5c-.7.4-1.6-.1-1.6-.9V4.9Z" />[m
+[31m-          </svg>[m
+[31m-          <span>Home</span>[m
+[31m-        </button>[m
+[32m+[m[41m        [m
+ [m
+         <div className="site-menu-wrap">[m
+           <button[m
+[36m@@ -161,6 +150,18 @@[m [mexport function PortfolioHome() {[m
+           aria-hidden={Boolean(activeCategory)}[m
+           inert={Boolean(activeCategory)}[m
+         >[m
+[32m+[m[32m          <button[m
+[32m+[m[32m          className="home-control"[m
+[32m+[m[32m          type="button"[m
+[32m+[m[32m          ref={homeControlRef}[m
+[32m+[m[32m          onClick={closeCategory}[m
+[32m+[m[32m          aria-label="Return to the home page"[m
+[32m+[m[32m        >[m
+[32m+[m[32m          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">[m
+[32m+[m[32m            <path d="M7 4.9c0-.8.9-1.3 1.6-.9l11 6.5a1.7 1.7 0 0 1 0 2.9l-11 6.5c-.7.4-1.6-.1-1.6-.9V4.9Z" />[m
+[32m+[m[32m          </svg>[m
+[32m+[m[32m          <span>Home</span>[m
+[32m+[m[32m        </button>[m
+           <div className="home-content">[m
+             <section className="intro-section" aria-labelledby="home-heading">[m
+               <div className="overlap-rings" aria-hidden="true">[m
+[36m@@ -169,7 +170,6 @@[m [mexport function PortfolioHome() {[m
+               </div>[m
+ [m
+               <div className="intro-copy">[m
+[31m-                <p className="intro-label">Systems thinker · organizer · designer</p>[m
+                 <h1 id="home-heading">[m
+                   Levi[m
+                   <br />[m
+[1mdiff --git a/lib/case-studies.ts b/lib/case-studies.ts[m
+[1mindex 254f1ef..0555d20 100644[m
+[1m--- a/lib/case-studies.ts[m
+[1m+++ b/lib/case-studies.ts[m
+[36m@@ -34,6 +34,7 @@[m [mexport const caseStudies: Record<string, CaseStudyContent> = {[m
+     course: 'UT 230',[m
+     professor: 'Wonyoung So',[m
+     overview: annArborOverview,[m
+[32m+[m[32m    galleryTitle: 'Final Poster',[m
+     overviewAsLeadCaption: true,[m
+     shortDescription:[m
+       'An urban observation and data visualization project about storefront communication across four downtown Ann Arbor business areas.',[m
+[36m@@ -110,7 +111,7 @@[m [mexport const caseStudies: Record<string, CaseStudyContent> = {[m
+       'This team project was completed for a Business+Tech Innovation Jam through the Ross School of Business. Competitors are first asked to identify a real problem which entrepreneurship could contribute to solving. Inspired by one of our teammate’s struggles with nearby construction noise, we aimed to create a platform which would enable contractors to inform residents that are affected by construction side effects.',[m
+     shortDescription:[m
+       'A mock startup developed to fill a gap in communication between contractors and nearby residents in the current construction system. Our team identified a problem, ideated upon solutions, and created wireframes for a potential product intervention.',[m
+[31m-    galleryTitle: 'Rebar: from problem to product',[m
+[32m+[m[32m    galleryTitle: 'Project Details',[m
+     galleryNote:[m
+       'A mock startup concept that connects contractors and nearby residents through timely project updates and feedback.',[m
+     figures: [[m
