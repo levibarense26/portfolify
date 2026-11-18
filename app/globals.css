@@ -168,7 +168,7 @@
   --portfolio-paper: #fbead0;
   --portfolio-title: #72736d;
   --portfolio-copy: #696c66;
-  --portfolio-green: #47783c;
+  --portfolio-green: #45AE48;
   --portfolio-line: rgba(114, 115, 109, 0.35);
 }
 
@@ -309,7 +309,7 @@ button:focus-visible {
 .intro-label,
 .panel-kicker,
 .project-status {
-  margin: 0;
+  margin: 2px 2px 0;
   color: var(--portfolio-title);
   line-height: 1.4;
   font-family: 'Stack Sans Text', 'Source Sans 3', Arial, sans-serif;
@@ -346,7 +346,7 @@ button:focus-visible {
 }
 
 .intro-disciplines {
-  margin: 0;
+  margin: 2px 2px 0;
   color: var(--portfolio-copy);
   font-size: clamp(20px, 2.25vw, 32px);
   font-weight: 500;
@@ -356,24 +356,18 @@ button:focus-visible {
 
 .overlap-rings {
   position: absolute;
-  top: 10px;
-  right: 1.5%;
+  top: 20px;
+  right: -15%;
   width: min(40vw, 440px);
   aspect-ratio: 1;
 }
 
 .ring {
-  position: absolute;
-  display: block;
-  width: 48%;
-  aspect-ratio: 1;
-  border: 5px solid #77776f;
-  border-radius: 50%;
-}
-
-.ring-one {
-  top: 7%;
-  left: 4%;
+  fill: none;
+  stroke: #77776f;
+  stroke-width: 6px;
+  
+  vector-effect: non-scaling-stroke;
 }
 
 
@@ -480,8 +474,8 @@ button:focus-visible {
 
 .panel-content {
   display: grid;
-  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(40px, 8vw, 124px);
+  grid-template-columns: minmax(220px, 0.6fr) minmax(0, 1.4fr);
+  gap: clamp(32px, 4vw, 64px);
   width: min(100%, 1440px);
   min-height: 100%;
   margin: 0 auto;
@@ -541,6 +535,7 @@ button:focus-visible {
 }
 
 .panel-projects h2 {
+  text-align: right;
   margin: 22px 0 0;
   color: var(--portfolio-title);
   font-family: 'Source Serif Pro', 'Source Serif 4', Georgia, serif;
@@ -666,15 +661,7 @@ button:focus-visible {
     line-height: 1.34;
   }
 
-  .overlap-rings {
-    top: 8px;
-    right: 0;
-    width: min(68vw, 280px);
-  }
 
-  .ring {
-    border-width: 4px;
-  }
 
   .category-list {
     margin-top: 0;
@@ -770,9 +757,44 @@ button:focus-visible {
 }
 
 .project-link {
-  display: inline-block;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding-right: 36px;
   color: inherit;
   text-decoration: none;
+}
+
+.project-link h3 {
+  min-width: 0;
+  transform: translateX(36px);
+  transition: transform 220ms ease;
+}
+
+.project-link .teaser-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+  padding-top: 0;
+}
+
+.project-link:hover h3,
+.project-link:focus-visible h3 {
+  transform: translateX(0);
+}
+
+.project-link:hover .teaser-arrow,
+.project-link:focus-visible .teaser-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@media (max-width: 760px) {
+  .project-link h3 {
+    transform: none;
+  }
 }
 
 .project-link:hover {

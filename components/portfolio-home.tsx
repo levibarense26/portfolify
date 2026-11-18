@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { BackToPortfolio } from '@/components/back-to-portfolio'
 
 type ProjectPlaceholder = {
@@ -21,13 +21,13 @@ type Category = {
 
 const youthAvProject: ProjectPlaceholder = {
   title: 'Codesign with Youth in AV Development',
-  status: 'Design research · General Motors',
+  status: 'Tasked with exploring ‘the Future Autonomous Experience’ with the support of GM, our team used design ethnography and codesign to explore how autonomous vehicles might affect how adolescents develop their independence.',
   href: '/case-studies/codesign-with-youth-in-av-development',
 }
 
 const annArborDataProject: ProjectPlaceholder = {
   title: 'Making Data in Downtown Ann Arbor',
-  status: 'Urban observation · Data visualization',
+  status: 'An urban observation and data visualization project about storefront communication across four downtown Ann Arbor business areas.',
   href: '/case-studies/making-data-in-downtown-ann-arbor',
 }
 
@@ -74,6 +74,7 @@ const categories: Category[] = [
 ]
 
 export function PortfolioHome() {
+  const overlapClipId = useId()
   const [activeCategory, setActiveCategory] = useState<Category | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const homeHeadingRef = useRef<HTMLHeadingElement>(null)
@@ -149,10 +150,27 @@ export function PortfolioHome() {
         >
           <div className="home-content">
             <section className="intro-section" aria-labelledby="home-heading">
-              <div className="overlap-rings" aria-hidden="true">
-                <span className="ring ring-one" />
-                <span className="ring ring-two" />
-              </div>
+              <svg
+                className="overlap-rings"
+                viewBox="0 0 100 100"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <defs>
+                  <clipPath id={overlapClipId}>
+                    <circle cx="24" cy="24" r="23.4" />
+                  </clipPath>
+                </defs>
+                <circle
+                  cx="32"
+                  cy="44"
+                  r="23.4"
+                  fill="var(--portfolio-green)"
+                  clipPath={`url(#${overlapClipId})`}
+                />
+                <circle className="ring" cx="24" cy="24" r="23.4" />
+                <circle className="ring" cx="32" cy="44" r="23.4" />
+              </svg>
 
               <div className="intro-copy">
                 <h1 id="home-heading" ref={homeHeadingRef} tabIndex={-1}>
@@ -215,7 +233,6 @@ export function PortfolioHome() {
                     closeCategory()
                   }}
                 />
-                <p className="panel-kicker">Explore</p>
                 <nav className="panel-category-list" aria-label="Portfolio categories">
                   {categories.map((category) => (
                     <button
@@ -233,7 +250,7 @@ export function PortfolioHome() {
 
               <div className="panel-projects" key={activeCategory.id}>
                 <div className="panel-heading-row">
-                  <p className="panel-kicker">Selected work</p>
+              
                 </div>
                 <h2 id="panel-heading" ref={panelHeadingRef} tabIndex={-1}>
                   {activeCategory.title}
@@ -245,6 +262,11 @@ export function PortfolioHome() {
                         {project.href ? (
                           <Link className="project-link" href={project.href}>
                             <h3>{project.title}</h3>
+                            <span className="teaser-arrow" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M7 17 17 7M8 7h9v9" />
+                              </svg>
+                            </span>
                           </Link>
                         ) : (
                           <h3>{project.title}</h3>
