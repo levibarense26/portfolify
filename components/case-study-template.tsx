@@ -28,7 +28,7 @@ function CaseStudyFigureGrid({ figures }: CaseStudyFigureGridProps) {
                 src={figure.imageSrc}
                 alt={figure.imageAlt}
                 fill
-                sizes="(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 70vw"
+                sizes={index === 0 ? '(max-width: 760px) 100vw, 90vw' : '(max-width: 760px) 100vw, 45vw'}
               />
             ) : (
               <div className="case-study-image-slot" aria-hidden="true">
@@ -37,9 +37,11 @@ function CaseStudyFigureGrid({ figures }: CaseStudyFigureGridProps) {
               </div>
             )}
           </div>
-          <figcaption>
-            <span>{figure.caption}</span>
-          </figcaption>
+          {figure.caption && (
+            <figcaption>
+              <span>{figure.caption}</span>
+            </figcaption>
+          )}
         </figure>
       ))}
     </div>

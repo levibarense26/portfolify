@@ -1,7 +1,7 @@
 export type CaseStudyFigure = {
   number: string
   imageAlt: string
-  caption: string
+  caption?: string
   imageSrc?: string
   aspectRatio?: string
 }
@@ -116,9 +116,14 @@ export const caseStudies: Record<string, CaseStudyContent> = {
       'A mock startup concept that connects contractors and nearby residents through timely project updates and feedback.',
     figures: [
       {
+        number: '00',
+        imageSrc: '/case-studies/rebar-construction-communication/title.png',
+        imageAlt: 'Rebar title slide with the tagline “Laying the foundation for people-oriented construction communication.”',
+        aspectRatio: '2496 / 1406',
+      },
+      {
         number: '01',
-        imageSrc:
-          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Jy9J3CnTvipPLgYE8zPrArt41r0OYy.png',
+        imageSrc: '/case-studies/rebar-construction-communication/developer-pain-points.png',
         imageAlt:
           'Slide titled Developer Pain Points listing manual resident updates, difficult feedback, and trust challenges for small construction firms.',
         caption:
@@ -128,16 +133,6 @@ export const caseStudies: Record<string, CaseStudyContent> = {
       {
         number: '02',
         imageSrc:
-          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-GSNzxPPRAHWOY18tt8qzvIbpuCnuSM.png',
-        imageAlt:
-          'Problem mapping diagram connecting resident clarity, developer feedback, and construction timeline visibility.',
-        caption:
-          'Problem mapping helped our team understand the intersections of the different stakeholders’ opinions and struggles.',
-        aspectRatio: '16 / 9',
-      },
-      {
-        number: '03',
-        imageSrc:
           'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-OgIz33KSJkRY7AuWpdMORiF5uYNVrm.png',
         imageAlt:
           'Solution slide outlining reduced wasted time, reduced costs, and increased trust and transparency.',
@@ -146,23 +141,32 @@ export const caseStudies: Record<string, CaseStudyContent> = {
         aspectRatio: '16 / 9',
       },
       {
-        number: '04',
+        number: '03',
         imageSrc:
-          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XTYnzuZRi5CkF2XegsIIyvSH2kOwUi.png',
+          'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-GSNzxPPRAHWOY18tt8qzvIbpuCnuSM.png',
         imageAlt:
-          'Product demo slide showing Rebar project notifications, a project update feed, and resident feedback.',
+          'Problem mapping diagram connecting resident clarity, developer feedback, and construction timeline visibility.',
         caption:
-          'Our team settled on an app that serves as a hub for nearby construction projects. Contractors could alert neighbors of service notices and timeline changes. Residents would be able to give feedback and updates about each project.',
+          'Problem mapping helped our team understand the intersections of the different stakeholders’ opinions and struggles.',
         aspectRatio: '16 / 9',
       },
       {
-        number: '05',
+        number: '04',
         imageSrc:
           'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-y6Bhbuh2ImTRmHGzvWhqHmpK59dvVj.png',
         imageAlt:
           'Alternate product demo view of Rebar with project cards, construction notices, and a resident feedback callout.',
         caption:
           'The Rebar concept brings project notices and updates into one place, making it easier for residents to stay informed and share feedback.',
+        aspectRatio: '16 / 9',
+      },
+      {
+        number: '05',
+        imageSrc: '/case-studies/rebar-construction-communication/calendar-and-map.png',
+        imageAlt:
+          'Rebar product demo showing project filters, a construction calendar, and nearby projects on a map.',
+        caption:
+          'Our team settled on an app that serves as a hub for nearby construction projects. Contractors could alert neighbors of service notices and timeline changes. Residents would be able to give feedback and updates about each project.',
         aspectRatio: '16 / 9',
       },
       {
@@ -191,6 +195,12 @@ export const caseStudies: Record<string, CaseStudyContent> = {
     galleryTitle: 'Project Details',
     galleryNote: 'Interview materials, recruitment, and rapid iteration shaped our research with adolescents and their families.',
     figures: [
+      {
+        number: '00',
+        imageSrc: '/case-studies/codesign-with-youth-in-av-development/title.png',
+        imageAlt: 'Parent–Child Perspectives on Autonomous Mobility title slide, subtitled “The Nuances of Navigating Independence and Personal Safety.”',
+        aspectRatio: '3840 / 2150',
+      },
       {
         number: '01',
         imageSrc:
@@ -242,6 +252,73 @@ export const caseStudies: Record<string, CaseStudyContent> = {
         caption:
           'Our research explored how autonomous vehicle capabilities might support adolescent independence while shaping family dynamics.',
         aspectRatio: '16 / 9',
+      },
+    ],
+  },
+  'dining-hall-mechanics': {
+    title: 'Dining Hall Mechanics',
+    category: 'Systems Analysis',
+    teammates: ['Levi Barense'],
+    course: 'UT 402 · Public Mechanics',
+    overview:
+      'I interviewed five University of Michigan staff members to understand how campus dining operates at an institutional scale. I traced the roles and decisions involved in feeding the university, from supplier contracts and demand forecasting to food preparation and post-cost analysis.',
+    galleryTitle: 'Project Details',
+    galleryNote: 'Research questions, staff interviews, and a process map of the university’s food system.',
+    figures: [
+      {
+        number: '00',
+        imageSrc: '/case-studies/dining-hall-mechanics/title.png',
+        imageAlt: 'How Does the University of Michigan Feed? A Report on the Mechanics of Food at an Institutional Scale.',
+        aspectRatio: '1716 / 960',
+      },
+      {
+        number: '01',
+        imageSrc: '/case-studies/dining-hall-mechanics/key-questions.png',
+        imageAlt: 'Research questions about how dining halls compare with restaurants, how dining staff coordinate, and how suppliers fit into sustainability goals.',
+        caption: 'before I began interviewing people who worked for and a around MDining, I outlined key questions that would guide my conversations.',
+        aspectRatio: '1686 / 946',
+      },
+      {
+        number: '02',
+        imageSrc: '/case-studies/dining-hall-mechanics/food-system.png',
+        imageAlt: 'The UN Food and Agriculture Organization definition of a food system, highlighting six stages from production to disposal.',
+        caption: 'I outlined the bounds of my investigation into what a campus food system looks like by looking at the UN FAO’s definition.',
+        aspectRatio: '1714 / 960',
+      },
+      {
+        number: '03',
+        imageSrc: '/case-studies/dining-hall-mechanics/keith-soster.png',
+        imageAlt: 'Interview slide for Keith Soster on the scale of MDining and its sustainability priorities.',
+        caption: 'My first interview was with Keith Soster, who manages student projects with MDining and is a self proclaimed “sustainability geek.” He introduced me to other people who worked with the University along the supply chain from procurement to ordering of products and post cost analysis once they are cooked.',
+        aspectRatio: '1715 / 960',
+      },
+      {
+        number: '04',
+        imageSrc: '/case-studies/dining-hall-mechanics/evan-sanford.png',
+        imageAlt: 'Interview slide for Evan Sanford on menu planning, food waste, and forecasting large food orders.',
+        caption: 'Evan was the person who was closest to food production that I talked to. He described challenges with purchasing food and managing production with sustainable methods.',
+        aspectRatio: '1676 / 940',
+      },
+      {
+        number: '05',
+        imageSrc: '/case-studies/dining-hall-mechanics/gabe-benitez.png',
+        imageAlt: 'Interview slide for Gabe Benitez on evaluating suppliers and creating vendor contracts.',
+        caption: 'Gabe manages the creation of contracts with vendors and suppliers for foodservice businesses across the institution including Michigan Medicine, which is a lot larger than just MDining.',
+        aspectRatio: '1674 / 938',
+      },
+      {
+        number: '06',
+        imageSrc: '/case-studies/dining-hall-mechanics/interviewees.png',
+        imageAlt: 'Portraits and roles of the five university staff members interviewed for the project.',
+        caption: 'I talked to three people who worked for MDining, Keith, Evan, and Eliza, and two people who worked for the larger university.',
+        aspectRatio: '1656 / 930',
+      },
+      {
+        number: '07',
+        imageSrc: '/case-studies/dining-hall-mechanics/process-map.png',
+        imageAlt: 'Process timeline covering contract procurement, consumption forecasting, supplier delivery, food preparation, inventory and ordering, and post-cost analysis.',
+        caption: 'By the end of my interview project, I was able to map out the process and the individual actors in that.',
+        aspectRatio: '1684 / 948',
       },
     ],
   },

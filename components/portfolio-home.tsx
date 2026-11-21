@@ -39,7 +39,7 @@ const rebarProject: ProjectPlaceholder = {
 
 const diningHallProject: ProjectPlaceholder = {
   title: 'Dining Hall Mechanics',
-  status: 'Business+Tech Innovation Jam · Ross School of Business',
+  status: 'Research on how the University of Michigan feeds its campus, from supplier contracts to dining hall operations.',
   href: '/case-studies/dining-hall-mechanics',
 }
 
@@ -178,10 +178,10 @@ export function PortfolioHome() {
                   <br />
                   Barense
                 </h1>
-                <p className="intro-statement">
+                <p className="disciplines">
                   Finding the overlap between different systemic problems.
                 </p>
-                <p className="intro-disciplines">
+                <p className="intro-statement">
                   Systems-Thinking,
                   <br />
                   Community Organizing,
